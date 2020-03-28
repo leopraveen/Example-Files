@@ -10,12 +10,12 @@ app.get("/", (req, res) => {
 
 });
 
-app.get("/game", (req, res) => {
+app.post("/game", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "game.html"));
 
 });
 
-app.get("/logout", (req, res) => {
+app.post("/logout", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "logout.html"));
 
 });
