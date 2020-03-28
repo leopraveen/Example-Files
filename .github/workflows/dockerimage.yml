@@ -1,0 +1,30 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Docker login
+        run: docker login -u leopraveen -p Dreams99
+      - name: Build
+        run: docker build -t game .
+      - name: Tags
+        run: |
+          docker tag game leopraveen/game:${{ github.sha }}
+          docker tag game leopraveen/game:latest
+      - name: Push
+        run: |
+          docker push leopraveen/game:${{ github.sha }}
+          docker push leopraveen/game:latest
+
+
+
+#
