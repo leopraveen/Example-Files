@@ -52,7 +52,11 @@ describe("UI Tests", () => {
         // Now Logout and see if its logged out
         cy.get('[data-cy=logout]').click();
         cy.get('[data-cy=logout-text]').should("contain", "Logged out of the game console")
+        // cy.wait(1000); sleep 1 second
         cy.get('[data-cy=logout-text]').should("not.contain", "Dummy")
-
     })
+
+    // it("should make a test fail", () => {
+    //     cy.get('[data-cy=zzzz]').should("exist");
+    // })
 })
