@@ -30,6 +30,22 @@ app.get("/breakout.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "breakout.html"));
 });
 
+app.get("/snake.jpeg", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "snake.jpeg"));
+});
+
+app.get("/pong.jpg", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "pong.jpg"));
+});
+
+app.get("/bomberman.jpeg", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "bomberman.jpeg"));
+});
+
+app.get("/breakout.jpeg", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "breakout.jpeg"));
+});
+
 app.post("/game", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "game.html"));
 
